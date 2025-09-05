@@ -1,0 +1,6 @@
+agno
+groq
+duckduckgo-search
+google-search-results
+yfinance
+python-dotenv

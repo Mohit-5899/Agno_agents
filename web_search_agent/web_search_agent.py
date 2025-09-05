@@ -9,11 +9,12 @@ with proper source citations.
 from agno.agent import Agent
 from agno.models.groq import Groq
 from agno.tools.duckduckgo import DuckDuckGoTools
+from agno.tools.serper import SerperTools
 from dotenv import load_dotenv
 import os
 from datetime import datetime
 
-load_dotenv()
+load_dotenv("../.env")
 
 
 def create_web_search_agent():
@@ -22,7 +23,7 @@ def create_web_search_agent():
         name="Web Search Agent",
         role="Search the web for information and provide comprehensive answers",
         model=Groq(id="moonshotai/kimi-k2-instruct", api_key=os.getenv("GROQ_API_KEY")),
-        tools=[DuckDuckGoTools()],
+        tools=[DuckDuckGoTools(), SerperTools(api_key=os.getenv("SERPER_API_KEY"))],
         instructions=[
             "Always search the web for current and accurate information",
             "Include sources and citations in your responses",

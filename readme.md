@@ -21,29 +21,42 @@ A comprehensive collection of AI agents built with the **Agno Framework** for va
 ```
 Agno_Agents/
 ├── README.md                    # This documentation
-├── .gitignore                   # Git ignore rules (excludes .env files)
+├── .env                        # Environment variables (API keys)
+├── requirements.txt            # Project-wide dependencies
+├── .gitignore                  # Git ignore rules (excludes .env files)
 ├── agno_codebase/              # Agno framework documentation
 │   └── agno-agi-agno-*.txt    # Comprehensive Agno reference
-└── web_search_agent/           # 🔍 Web Search Agent
-    ├── web_search_agent.py     # Command-line interface
-    ├── streamlit_app.py        # Modern web interface
-    ├── requirements.txt        # Agent dependencies
-    ├── README.md               # Detailed agent documentation
-    └── .gitignore             # Agent-specific ignores
+├── web_search_agent/           # 🔍 Web Search Agent
+│   ├── web_search_agent.py     # Command-line interface
+│   ├── streamlit_app.py        # Modern web interface
+│   ├── requirements.txt        # Agent dependencies
+│   ├── README.md               # Detailed agent documentation
+│   └── .gitignore             # Agent-specific ignores
+├── finance_agent/              # 💼 Financial Analysis Team
+│   ├── financial_analysis_team.py  # Multi-agent team for finance
+│   ├── requirements.txt        # Agent dependencies
+│   └── README.md               # Detailed agent documentation
+└── financial_analysis_team.py  # 📊 Standalone finance team (root level)
 ```
 
 ## 🤖 Available Agents
 
 ### 1. 🔍 Web Search Agent
 
-**Status**: ✅ Production Ready | **AI Model**: Groq (Moonshot AI) | **Tools**: DuckDuckGo Search
+**Status**: ✅ Production Ready | **AI Model**: Groq (Kimi-K2-Instruct) | **Tools**: DuckDuckGo Search + Serper API
 
 A sophisticated AI-powered web search agent that provides comprehensive answers with proper source citations and real-time information retrieval.
+
+### 2. 💼 Financial Analysis Team
+
+**Status**: ✅ Production Ready | **AI Model**: Groq (Kimi-K2-Instruct) | **Tools**: DuckDuckGo, Serper API, YFinance
+
+A multi-agent team system that combines web search and financial data analysis for comprehensive market insights and financial performance reports.
 
 #### ✨ Key Features
 - 🌐 **Modern Web Interface**: Beautiful Streamlit UI with chat functionality
 - 🔑 **Dynamic API Key**: Enter API key directly in web interface (no file setup!)
-- 🔍 **Real-time Search**: Live web search with DuckDuckGo integration
+- 🔍 **Dual Search**: DuckDuckGo + Serper API for comprehensive results
 - 📝 **Source Citations**: Automatic citation and verification of sources
 - 🕒 **Date Awareness**: Context-aware responses with current date
 - 💬 **Dual Interface**: Both web UI and command-line options
@@ -80,9 +93,9 @@ python3 web_search_agent.py
 
 | Agent | Description | Status | Expected |
 |-------|-------------|--------|----------|
-| 📧 **Email Assistant** | Automated email management and smart responses | 🔄 Planning | Q4 2024 |
-| 📊 **Data Analyst** | CSV/Excel processing with intelligent insights | 🔄 Planning | Q4 2024 |
-| 💼 **Finance Agent** | Stock analysis and portfolio management | 🔄 Planning | Q1 2025 |
+| 💼 **Finance Agent** | Stock analysis and portfolio management | ✅ **Available** | **Now!** |
+| 📧 **Email Assistant** | Automated email management and smart responses | 🔄 Planning | Q1 2025 |
+| 📊 **Data Analyst** | CSV/Excel processing with intelligent insights | 🔄 Planning | Q1 2025 |
 | 🧑‍💻 **Code Reviewer** | Automated code analysis and suggestions | 🔄 Planning | Q1 2025 |
 | 📝 **Content Creator** | Blog posts, articles, and creative writing | 🔄 Planning | Q1 2025 |
 | 🌐 **Social Media Manager** | Content scheduling and engagement automation | 🔄 Planning | Q2 2025 |
@@ -93,7 +106,7 @@ python3 web_search_agent.py
 |------------------------------|--------------------------------|--------------------------|
 | Web Search Agent ✅ | Email Assistant 🔄 | Content Creator 🔄 |
 | Research Assistant 🔄 | Data Analyst 🔄 | Social Media Manager 🔄 |
-| Document Analyzer 🔄 | Finance Agent 🔄 | Image Generator 🔄 |
+| Document Analyzer 🔄 | Finance Agent ✅ | Image Generator 🔄 |
 
 | **🧑‍💻 Development & Tech** | **🤝 Communication** | **🏢 Enterprise** |
 |---------------------------|---------------------|-------------------|
@@ -136,10 +149,15 @@ python3 web_search_agent.py
 
 **For Web Interface:** Simply enter your API key in the sidebar - no file setup needed!
 
-**For CLI:** Create a `.env` file with your API key:
+**For CLI:** Create a `.env` file with your API keys:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
+SERPER_API_KEY=your_serper_api_key_here
 ```
+
+**Get API Keys:**
+- [Groq API Key](https://console.groq.com/) - Free tier available
+- [Serper API Key](https://serper.dev/) - Free tier available
 
 ## 🏗️ Building Your Own Agent
 
@@ -260,8 +278,8 @@ We welcome contributions from the community! Here's how you can help:
 
 ## 📊 Repository Statistics
 
-- **🤖 Active Agents**: 1 (Web Search)
-- **🔄 In Development**: 6 planned agents
+- **🤖 Active Agents**: 2 (Web Search, Finance Team)
+- **🔄 In Development**: 5 planned agents
 - **🚀 Languages**: Python
 - **🧠 AI Models**: Groq, OpenAI, Anthropic support
 - **🛠️ Tools**: DuckDuckGo, file ops, web APIs

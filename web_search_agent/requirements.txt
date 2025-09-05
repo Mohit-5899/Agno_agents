@@ -1,5 +1,6 @@
 agno
 ddgs
 groq
+google-search-results
 python-dotenv
 streamlit

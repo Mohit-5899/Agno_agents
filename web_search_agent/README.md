@@ -5,7 +5,7 @@ A sophisticated AI-powered web search agent built using the **Agno Framework** w
 ## ✨ Features
 
 - **🚀 Fast AI Responses**: Powered by Groq's Moonshot AI (Kimi-K2-Instruct model)
-- **🔍 Web Search**: Real-time web search using DuckDuckGo tools
+- **🔍 Dual Search**: Real-time web search using DuckDuckGo + Serper API
 - **📝 Source Citations**: Automatically includes sources and citations in responses
 - **💬 Interactive CLI**: User-friendly command-line interface
 - **🌐 Streamlit Web UI**: Modern web interface with chat functionality
@@ -25,8 +25,9 @@ A sophisticated AI-powered web search agent built using the **Agno Framework** w
    - Date-aware responses
 
 2. **Search Tools**:
-   - `DuckDuckGoTools()` for web search capabilities
-   - Real-time information retrieval
+   - `DuckDuckGoTools()` for privacy-focused web search
+   - `SerperTools()` for enhanced Google search results
+   - Real-time information retrieval with dual search capabilities
 
 3. **Environment Management**:
    - `.env` file for API key storage
@@ -48,6 +49,7 @@ web_search_agent/
 
 - **agno**: Core Agno framework for AI agents
 - **ddgs**: DuckDuckGo search functionality
+- **google-search-results**: Serper API for enhanced search
 - **groq**: Groq API client for AI model access
 - **python-dotenv**: Environment variable management
 - **streamlit**: Modern web interface framework
@@ -85,9 +87,12 @@ Add your Groq API key to the `.env` file:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
+SERPER_API_KEY=your_serper_api_key_here
 ```
 
-**Get your Groq API key**: Visit [Groq Console](https://console.groq.com/) to obtain your free API key.
+**Get your API keys**: 
+- **Groq API key**: Visit [Groq Console](https://console.groq.com/) to obtain your free API key
+- **Serper API key**: Visit [Serper.dev](https://serper.dev/) to obtain your free API key
 
 ### 3. Run the Agent
 
@@ -265,7 +270,7 @@ The agent includes comprehensive error handling for:
 
 - **API Key Security**: Keys stored in environment variables, not in code
 - **No Data Storage**: Agent doesn't store conversation history by default
-- **Privacy-First Search**: Uses DuckDuckGo for privacy-respecting search
+- **Dual Search Engines**: Uses both DuckDuckGo (privacy-focused) and Serper (comprehensive results)
 - **Gitignore Protection**: Sensitive files excluded from version control
 
 ## 📋 Requirements
@@ -277,7 +282,7 @@ The agent includes comprehensive error handling for:
 
 ### API Requirements
 - Valid Groq API key (free tier available)
-- No additional API keys required for DuckDuckGo search
+- Serper API key required for enhanced Google search results (free tier available)
 
 ## 🐛 Troubleshooting
 
